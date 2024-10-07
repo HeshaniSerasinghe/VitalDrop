@@ -1,0 +1,9 @@
+[package]
+org = "chamitha_jayavihan"
+name = "back_end"
+version = "0.1.0"
+distribution = "2201.10.1"
+
+[build-options]
+observabilityIncluded = true
+mysql = { path = "./libs/mysql" }
