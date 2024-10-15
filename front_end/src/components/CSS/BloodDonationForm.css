@@ -1,0 +1,156 @@
+/* BloodDonationForm.css */
+body {
+  font-family: 'Tahoma', sans-serif;
+  background-color: #FFF3E2;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* Prevents unnecessary scrolling */
+}
+
+.blood-donation-form {
+  background-color: #FFE5CA;
+  border-radius: 10px;
+  padding: 30px;
+  width: 700px; /* Reduced width */
+  max-height: 90vh; /* Limits the height to 90% of the viewport */
+  overflow-y: auto; /* Enables scrolling if form content exceeds the height */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  animation: form-fade-in 1s ease forwards;
+}
+
+.blood-donation-form:hover {
+  transform: translateY(-10px);
+}
+
+.blood-donation-form h2 {
+  text-align: center;
+  color: #E74646;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.form-section {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #FA9884;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #FA9884;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+  border-color: #E74646;
+  outline: none;
+}
+
+button {
+  background-color: #E74646;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #FA9884;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+/* Success Animation for Button */
+button:active {
+  animation: button-press 0.2s forwards;
+}
+
+@keyframes button-press {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(3px);
+  }
+}
+
+/* Form fade-in animation */
+@keyframes form-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.blood-donation-form {
+  animation: form-fade-in 1s ease forwards;
+}
+
+/* Scrollbar Styles */
+.blood-donation-form::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.blood-donation-form::-webkit-scrollbar-track {
+  background: #FFE5CA; /* Background of the scrollbar track */
+  border-radius: 10px; /* Round corners for track */
+}
+
+.blood-donation-form::-webkit-scrollbar-thumb {
+  background-color: #E74646; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Round corners for thumb */
+  border: 2px solid #FFE5CA; /* Space between track and thumb */
+}
+
+.blood-donation-form::-webkit-scrollbar-thumb:hover {
+  background-color: #FA9884; /* Change thumb color on hover */
+}
+
+/* Firefox scrollbar styling */
+.blood-donation-form {
+  scrollbar-width: thin; /* Make scrollbar thin */
+  scrollbar-color: #E74646 #FFE5CA; /* thumb and track colors */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .blood-donation-form {
+    width: 90%;
+    padding: 20px;
+    max-height: 85vh; /* Adjusts height for smaller screens */
+  }
+}

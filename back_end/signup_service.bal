@@ -1,13 +1,13 @@
 import ballerina/http;
+import ballerina/mysql;
 import ballerina/sql;
-import ballerinax/mysql;
 
 configurable string dbUser = "root";
 configurable string dbPassword = "Jayavihan@2002";
 configurable string dbHost = "localhost";
 configurable string dbName = "vitaldrop";
 
-listener http:Listener signupListener = new(8080);
+listener http:Listener signupListener = new (8080);
 
 // Create MySQL client to connect to the database
 mysql:Client dbClient = check new ({
@@ -23,7 +23,7 @@ service /signup on signupListener {
     // POST method to handle signup
     resource function post registerUser(http:Caller caller, http:Request req) returns error? {
         json signupData = check req.getJsonPayload();
-        
+
         // Extract data from JSON payload
         string username = check signupData.username.toString();
         string phone = check signupData.phone.toString();

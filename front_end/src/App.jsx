@@ -1,15 +1,12 @@
-import { useState } from 'react'
-import SignUp from './components/sign_up'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-
-
+import React from "react";
+import BloodDonationForm from "./components/BloodDonationForm";
 
 function App() {
-  
-
-  return(
-    <SignUp />
-  )
+  return (
+    <div>
+      <BloodDonationForm />
+    </div>
+  );
 }
 
-export default App
+export default App;
